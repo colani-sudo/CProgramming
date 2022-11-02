@@ -1,0 +1,41 @@
+
+
+==============
+Unbuffered I/O
+==============
+Four methods for writing in a file:
+ -> open() 
+ -> read() 
+ -> write()
+ -> close() 
+
+Opening a File
+
+	fd = open(name, flags, mode)
+
+	fd -> returns lowest available descriptor
+	name -> pathname of the file to be opened
+	flags -> must include  one of O_RDONLY, O_WRONLY, O_RDWR
+		-> may include one or more of: o_APPEND, O_CREAT, O_TRUNC
+	mode -> Access mode of the file (only used if the file is being created
+
+Standard Streams
+		(keyboard) fd = 0 -> stdin
+		(Program) fd = 1 -> stdout -> Screen
+		(Program) fd = 2 -> stderr -> Screen
+
+
+Writing to file from data memory
+	write(fd, buffer, count)
+
+Reading from file to data memory
+	read(fd, buffer, count)
+	-> read returns the number  of bytes actually read (0 or zero on end-of-file)
+
+Closing a File
+	close(fd) -> closes the descriptor and makes it available for resuse
+	fd -> an open file descriptor
+
+	
+
+
